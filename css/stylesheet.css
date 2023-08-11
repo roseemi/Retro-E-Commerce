@@ -1,0 +1,704 @@
+html{scroll-behavior: smooth;}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Alata', sans-serif;
+    color: #824138;
+}
+p, a, li {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+a { color: inherit; }
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 25% 25% 25% 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+/**************
+ Global Header
+ *************/
+.main-menu {
+    width: 100%;
+    height: 32%;
+    position: fixed;
+    z-index: 9999;
+    background-color: #e9e3e3;
+    transition: .5s ease-out;
+}
+.global-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.main-logo {
+    height: 30%;
+    flex-grow: 1;
+}
+.main-logo a img {
+    height: 100%;
+}
+.menu {
+    list-style: none;
+}
+#responsive-menu {
+    flex-grow: 1;
+    display: block;
+    list-style: none;
+    margin: 0;
+}
+.menu-item{
+    padding: 0 30px;
+    transition: .5s ease-out;
+    display: inline-block;
+}
+.menu-item a {
+    color: #ab5663;
+    font-family: 'Ubuntu', sans-serif;
+}
+#condensed-menu {
+    display: none;
+    cursor: pointer;
+    width: auto;
+}
+.product-types {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    background-color: #e9e3e3;
+    padding-bottom: 1%;
+    transition: .5s ease-out;
+}
+.product-types div {
+    width: 15%;
+    gap: 1%;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .5s ease-out;
+
+}
+.header-button{
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #ab435a;
+    color: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    transition: all .5s ease;
+    padding: 2%;
+    width: 70%;
+}
+.product-types div img {
+    width: 80%;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    transition: all .5s ease-out;
+}
+/* Add upon scrolling down */
+.scrolled-menu {
+    background-color: #dad2cf;
+    transition: .5s ease;
+    height: 12%;
+}
+.scrolled-menu .main-logo {
+    height: 100%;
+}
+.scrolled-menu .menu li {
+    padding: 0 10px;
+}
+.scrolled-menu .menu li a {
+    color: #ab435a;
+}
+.scrolled-menu div button {
+    font-size: .7em;
+}
+.scrolled-menu .product-types {
+    display: none;
+}
+/**************
+ Main page
+ *************/
+main {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    background: #f4f4f4;
+}
+.masthead {
+    height: 100vh;
+    background-image: url("../img/masthead1.jpg");
+    background-position: top;
+    background-size: cover;
+}
+.masthead div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+h1 {
+    color: #f4f4f4;
+    font-size: 8em;
+}
+.collection-header div {
+    padding: 1% 0;
+    text-align: center;
+}
+.collection-header h2 {
+    font-size: 3em;
+    color: #B65E43;
+}
+.promotion {
+    display: inline-flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+}
+.promotion .one {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2%;
+    color: #824138;
+}
+.promotion .one div:nth-child(1) {
+    flex-grow: 1;
+    width: 100%;
+}
+.promotion .one .product-plate {
+    width: 45%;
+}
+.promotion .one div:nth-child(1) h2 {
+    font-size: 2em;
+    font-family: 'Ubuntu', sans-serif;
+}
+.product-plate, .birthday-promo {
+    width: 80%;
+    padding: 1%;
+    margin: 1%;
+    background-color: #f4f4f4;
+}
+.product-plate {
+    border: 4px dotted #C58E96;
+}
+.product-plate p {
+    color: #0e0e0e;
+    font-size: 2em;
+    text-align: center;
+}
+.product-plate p:nth-of-type(odd) {
+    font-weight: bold; /*Bold the names*/
+    color: #632832;
+}
+.product-plate img {
+    width: 100%;
+}
+.buy-me {
+    opacity: .8;
+}
+.product-plate:hover .buy-me{
+    opacity: 1;
+    transition: .5s ease;
+}
+.product-plate:hover .buy-me button{
+    border-radius: 5px;
+}
+.product-plate:hover .buy-me button:hover{
+    height: 100px;
+}
+.default-button {
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(0deg, #B6764C 0%, #B65E43 30%, #BE6579 80%);
+    border: 1px solid #f4f4f4;
+    color: #f4f4f4;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px 30px;
+    border-radius: 45px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.default-button:hover {
+    border: 1px solid rgba(255,255,255, .8);
+}
+.promotion .two {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2%;
+    flex-direction: column;
+}
+.promotion .two h3 {
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.promotion .two span {
+    color: #26364d;
+}
+.promotion .two h4 {
+    font-size: 1em;
+    text-align: center;
+    color: #4b4b4b;
+    padding: 0 10%;
+}
+.promotion .two div {
+    width: 70%;
+}
+.promotion .two img {
+    width: 100%;
+}
+.other-promo {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    padding: 0 2%;
+}
+.other-promo div {
+    width: 30%;
+    position: relative;
+}
+.other-promo div .default-button { /* Make the buttons stay in a static position */
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    width: 30%;
+    padding: 0;
+    border-radius: 5px;
+    background: linear-gradient(0deg, #ab5663 0%, #ab5663 0%);
+}
+.other-promo div img {
+    width: 100%;
+}
+.new-products {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+/**************
+ Product Page
+***************/
+h2 {
+    font-size: 3em;
+    text-align: center;
+}
+.promo-banner {
+    height: 90vh;
+    background-image: url("../img/promobanner.jpg");
+    background-position: center;
+    background-size: cover;
+}
+.product-header {
+    text-align: center;
+}
+.product-header div {
+    font-size: 3em;
+    margin: 3%;
+}
+hr.solid {
+    height: 3px;
+    background-color: #A87980;
+}
+.promo-items {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.product-plate {
+    padding: 2%;
+    flex: 1 1 18%;
+}
+.all-products {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+/**************
+  About Us
+ *************/
+.alt-main {
+    margin-top: 300px;
+}
+.about-container {
+    margin-top: 2%;
+    display: flex;
+}
+.tab {
+    width: 30%;
+    padding: 2% 2%;
+}
+.tab button {
+    border-radius: 10px;
+    background: linear-gradient(0deg, #ab5663 0%, #ab5663 0%);
+}
+#display {
+    padding: 2% 2%;
+    width: 70%;
+    height: auto;
+}
+#display h2 {
+    margin: 0 0 5%;
+}
+/**************
+ Contact page
+ *************/
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 10%;
+    padding: 2% 0;
+    background-color: #eae5e5;
+    border-radius: 5px;
+    font-size: 1.5em;
+    color: #0e0e0e;
+}
+.contact-container form {
+    padding: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Quicksand', sans-serif;
+}
+.contact-container form div {
+    width: 48%;
+}
+.contact-container form div:nth-child(3) {
+    flex-grow: 1;
+    padding: 0 1%;
+    display: flex;
+    flex-direction: column;
+}
+input, select, textarea {
+    width: 100%;
+    height: auto;
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin: 10px 0;
+    padding: .5%;
+    font-size: .8em;
+    font-family: 'Quicksand', sans-serif;
+}
+textarea {
+    height: 200px;
+    font-size: 1em;
+}
+select {
+    background-color: #bdb1b1;
+    color: #f4f4f4;
+}
+input[type=submit] {
+    width: 50%;
+    align-self: center;
+    background-color: #A87980;
+    color: #f4f4f4;
+}
+input[type=submit]:hover {
+    cursor: pointer;
+}
+/**************
+ Global Footer
+ *************/
+.main-footer {
+    z-index: 1000;
+    width: 100%;
+    grid-area: footer;
+}
+/* Set a grid layout for a more static design*/
+.global-footer {
+    height: 300px;
+    background-color: rgba(255, 255, 255, 1);
+    display: grid;
+    grid-template-columns: repeat(5, 33% 33% 33%);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "letter letter letter"
+    "icon links contact";
+    gap: .5%;
+}
+/* Newsletter header and inputs */
+.newsletter {
+    grid-area: letter;
+    height: 80px;
+}
+.newsletter div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+}
+.newsletter div h4 {
+    width: 20%;
+    text-align: center;
+}
+.newsletter div input {
+    width: 20%;
+    height: min-content;
+}
+.newsletter div input:nth-of-type(1) {
+    border: 1px solid #4b4b4b; /* Make the box more legible */
+}
+/* Info at the very bottom of the page */
+.footer-logo, .footer-links, .footer-contacts {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-logo {
+    grid-area: icon;
+    justify-content: flex-end;
+}
+.footer-logo > a  {
+    height: 80%;
+}
+.footer-logo > a > img {
+    height: 100%;
+}
+.footer-links {
+    grid-area: links;
+}
+.footer-contacts {
+    grid-area: contact;
+}
+.footer-contacts p {
+    text-align: center;
+}
+.footer-contacts p i {
+    font-size: 40px;
+    margin: 0 8%;
+}
+/*******************
+Responsive Design
+ *******************/
+@media screen and (max-width: 1440px) {
+    .product-types div {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .product-plate p {
+        margin: 5% 0;
+        font-size: 1.5em;
+    }
+}
+@media screen and (max-width: 1024px) {
+    /* Adjust header and footer sizing values */
+    .main-menu {
+        height: 22%;
+    }
+    .scrolled-menu {
+        height: 12%;
+    }
+    .main-logo {
+        height: 100%;
+    }
+    .menu li {
+        transition: none;
+        padding: 0 15px;
+    }
+    .menu li a {
+        font-size: 20px;
+    }
+    /* Hide the product bars on the header when the screen becomes too small */
+    .product-types {
+        visibility: hidden;
+    }
+    .product-types div img {
+        transition: none;
+    }
+    .header-button {
+        font-size: .6em;
+        transition: none;
+    }
+    /* Adjust main body */
+    .masthead h1 {
+        font-size: 6.5em;
+    }
+    .scrolled-menu .product-types div{
+        margin-bottom: .8%;
+    }
+    .other-promo div .default-button {
+        width: 50%;
+    }
+    .alt-main {
+        margin-top: 200px;
+    }
+    .product-plate {
+        flex: 1 1 40%;
+    }
+    /* Adjust the footer */
+    .footer-links a, .footer-contacts p {
+        font-size: 15px;
+    }
+    .footer-contacts p i {
+        margin: 0 3%;
+    }
+    input, select, textarea {
+        font-size: .6em;
+    }
+    textarea {
+        font-size: .8em;
+    }
+}
+@media screen and (max-width: 960px) {
+    .menu li {
+        transition: none;
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 905px) {
+    /* Turn nav into a hamburger hav */
+    #responsive-menu {
+        display: none;
+        position: fixed;
+        left: 0;
+        background-color: #e9e3e3;
+        width: 100%;
+        text-align: center;
+        top: 20%;
+        padding: 1%;
+    }
+    .menu-item {
+        display: block;
+        width: 100%;
+    }
+    #condensed-menu {
+        float: right;
+        display: block;
+        margin-right: 30px;
+        font-size: 1.5em;
+    }
+    .scrolled-menu #responsive-menu {
+        transition: .5s ease;
+        top: 12%;
+    }
+    .masthead h1 {
+        font-size: 4em;
+    }
+}
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2em;
+    }
+    .main-menu {
+        height: 12%;
+    }
+    .scrolled-menu {
+        height: 10%;
+    }
+    #responsive-menu {
+        top: 110px;
+    }
+    .scrolled-menu #responsive-menu {
+        top: 100px;
+    }
+    /* Adjust main page */
+    .masthead {
+        height: 70vh;
+    }
+    .masthead h1 {
+        font-size: 3.5em;
+    }
+    .promotion {
+        flex-direction: column;
+    }
+    .promotion .one {
+        flex-direction: row;
+        padding: 0;
+    }
+    .promotion .two {
+        padding: 0;
+    }
+    .other-promo {
+        gap: 0;
+        padding: 0;
+        flex-direction: column;
+    }
+    .other-promo div {
+        width: 100%;
+    }
+    .other-promo div .default-button {
+        width: 40%;
+    }
+    /* Adjust products page */
+    .promo-banner {
+        height: 50vh;
+    }
+    .alt-main {
+        margin-top: 100px;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+    .tab {
+        width: 96%;
+    }
+    #display {
+        width: 96%;
+    }
+    .collection-header h2 {
+        font-size: 2.2em;
+    }
+    /* Adjust footer */
+    .global-footer {
+        height: 550px;
+        grid-template-areas:
+    "letter letter letter"
+    "icon links links"
+    "contact contact contact";
+    }
+    .newsletter div {
+        flex-wrap: wrap;
+    }
+    .newsletter div h4, .newsletter div input {
+        width: 80%;
+    }
+    .footer-logo, .footer-links {
+        margin-top: 50px;
+        height: 200px;
+    }
+    .footer-logo > a  {
+        height: auto;
+        width: 100%;
+    }
+    .footer-logo > a > img {
+        width: 100%;
+        height: auto;
+        margin: 0 10%;
+    }
+    .footer-contacts {
+        justify-content: center;
+        height: 80px;
+    }
+    .footer-contacts div {
+        width: 100%;
+    }
+    .contact-container {
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 768px) {
+    .product-plate {
+        flex: 1 1 100%;
+    }
+}

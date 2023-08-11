@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/html">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact Us">
+    <title>Beanie Babies - Contact Us</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="./js/custom-js.js"></script>
+</head>
+<body>
+    <header class="main-menu" id="header"></header>
+    <main class="alt-main">
+        <h2>Contact Us</h2>
+        <section class="contact-container">
+            <form action="contact.php">
+                <div>
+                    <label>Fist Name</label>
+                    <input type="text" name="firstname" placeholder="Your first name...">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Your email...">
+                </div>
+                <div>
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" placeholder="Your last name...">
+                    <label>Order Number (Optional)</label>
+                    <input type="text" name="ordernumber" placeholder="#00kt01e...">
+                </div>
+                <div>
+                    <label>Subject</label>
+                    <select>
+                        <option value="orderstatus">Order Status</option>
+                        <option value="orderreturn">Order Return</option>
+                        <option value="ordercancel">Order Cancellation</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <label>Message</label>
+                    <textarea name="subject" placeholder="Your message here..."></textarea>
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="main-footer" id="footer"></footer>
+</body>
+</html>
