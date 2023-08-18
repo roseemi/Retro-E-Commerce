@@ -16,3 +16,5 @@ Pages:
 The wishlist and cart buttons are for show, and do not redirect to any new pages.
 
 This project does not contain any files meant to support the use of any forms that appear in the project. All forms are for show/design purposes only.
+
+***Visit the working demo here:** https://roseemi.github.io/Retro-E-Commerce/
